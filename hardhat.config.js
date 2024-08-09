@@ -1,7 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-verify");
 
-
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -14,18 +13,19 @@ module.exports = {
     core_testnet: {
       url: "https://rpc.test.btcs.network",
       accounts: privateKey(),
-    }
+    },
   },
   solidity: {
-    version: "0.8.24",
+    version: "0.8.19",
     settings: {
-      evmVersion: 'paris',
+      evmVersion: "paris",
       optimizer: {
         enabled: true,
         runs: 1000,
       },
     },
-  },  etherscan: {
-    apiKey: process.env.API_KEY, 
+  },
+  etherscan: {
+    apiKey: process.env.API_KEY,
   },
 };
